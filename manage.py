@@ -5,8 +5,9 @@ import sys
 
 
 def main():
+    print("Entra na maquina virtual BURRO!!! ")
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'control.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'setup.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

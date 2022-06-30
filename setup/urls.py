@@ -1,7 +1,7 @@
-"""control URL Configuration
+"""setup URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,14 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from web_app.views import home
+from web_app.views import sobre
 
-from service.views import home, listage, new_parts
-from service.views import itsWorking
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home),
-    path('', listage, name='listage'),
-    path('its/work/', itsWorking),
-    path('new/', new_parts, name='new_parts'),
+    path('', home),
+    path('sobre/', sobre),
 ]

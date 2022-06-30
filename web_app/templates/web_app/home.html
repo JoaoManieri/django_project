@@ -1,0 +1,376 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <link rel="stylesheet" href="{% static 'css/dracula.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/estyle.css' %}">
+    <title>Manieri</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'image/logo.png' %}" alt="" width="30" height="30" class="d-inline-block align-text-top"> anieri
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Scripts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Funções</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Em breve...</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <main class="Background">
+
+        <div class="quadro-sem-borda">
+
+            <h1>Django & Python3</h1>
+            <br>
+            <hr class="hr0">
+
+            <p>
+                Python é uma tecnologia que têm sido amplamente utilizada para diversos fins; de aplicações cientificas, engenharia de dados, inteligencia artificial ate aplicações mobile, a linguagem tem se destacado por ser muito facil e de simples compreenção. Uma
+                dessas aplicações é a criaçãod e apis e aplicativos web, que é o caso deste site :)
+            </p>
+
+            <p>
+                Este blog tem o onjetivo de te ajudar a criar uma aplicação web como esta, realizar o deploy no Heroku e assim poder ter um site para você de forma totalmente gratuita.
+            </p>
+
+        </div>
+
+        <!--  -->
+
+        <div class="quadro">
+
+
+            <div>
+                <h3>
+                    Criando uma ambiente virtual
+                    <hr class="hr3">
+                </h3>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <p>
+                        O módulo venv fornece suporte para a criação de “ambientes virtuais” leves com seus próprios diretórios de sites, opcionalmente isolados dos diretórios de sites do sistema. Cada ambiente virtual tem seu próprio binário Python (que corresponde à versão
+                        do binário que foi usado para criar esse ambiente) e pode ter seu próprio conjunto independente de pacotes Python instalados em seus diretórios de site.
+                    </p>
+                    <br> <b>comando para criar ambiente virtual</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ python3 -m venv ./venv </code></pre>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <br> <b>Para ativar o ambiente virtual basta dar esse comando no console</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ venv\Scripts\activate </code></pre>
+            </div>
+
+            <!-- caixa de comentarios  -->
+
+            <div>
+                <button id="show-or-hide" type="button" class="btn bnt-comentario">Comentarios</button>
+            </div>
+
+            <div class="comentConteiner">
+                <hr>
+                <div>
+                    COMENTARIOS
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control form-coment" placeholder="First name" aria-label="First name">
+                    </div>
+                    <div class="col">
+                      <input type="email" class="form-control form-coment" placeholder="E-mail" aria-label="Last name">
+                    </div>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <textarea class="form-control form-coment " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Comments</label>
+                </div>
+
+            </div>
+
+            <!--  -->
+
+        </div>
+
+        <!--  -->
+
+        <div class="quadro">
+
+
+            <div>
+                <h3>
+                    Instalando o Django em seu ambiente virtual
+                    <hr class="hr3">
+                </h3>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <p>
+                        O framework django é uma ferramenta que possibilita desenvolver apps web como apis e paginas inteiras. Neste caso, como pretendemos fazer o deply no heroku, temos que, até a data deste de hoje (18/06/2022) temos que utilizar a versao 3.2.13, porém o django
+                        se encontra na versao 4.x.x.
+                    </p>
+                    <br> <b>comando para baixar o pacote django</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ pip install django==3.2.13 </code></pre>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <br> <b>comando para baixar o pacote django rest</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ pip install djangorestframework </code></pre>
+            </div>
+
+        </div>
+
+        <div class="quadro">
+
+            <div>
+                <h3>
+                    Criando arquivos do Django framework.
+                    <hr class="hr3">
+                </h3>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <p>
+
+                        Para criar o projeto Django é necessario um pacote de arquivo já prontos, para isso você precisa escolher o nome desta pasta, no meu caso escolhi o nome setup. Usamos o "." ao fim para indicar ao console que queremos criar a os arquivos na pasta anterior.
+                    </p>
+                    <br> <b>comando para criar arquivos</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ django-admin startproject setup .</code></pre>
+            </div>
+
+        </div>
+
+        <div class="quadro">
+
+            <div>
+                <h3>
+                    Pronto, agora é só testar localmente seu primeiro site.
+                    <hr class="hr3">
+                </h3>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <p>
+                        Para testar basta rodar o seguinte comando
+                    </p>
+                    <br> <b>comando para rodar o site localmente</b>.
+                    <br>
+
+                </font> <br />
+
+            </div>
+
+            <div class="border-box" class="codigo-wrapper">
+                <pre><code class="preview python" contenteditable="false" aria-label="Editor de codigo"> $ python manage.py runserver</code></pre>
+            </div>
+
+            <div>
+                <font face="Calibri Light">
+
+                    <p>
+                        Apos rodar o comando deve aparecer um link, e se vc clicar neste link sera redirecionado ao seu site.
+                    </p>
+                </font> <br />
+            </div>
+
+            <div class="gifs">
+                <img src="{% static 'image/rodandoServidor.gif' %}" alt="" class="gif-on-box">
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-dark text-muted">
+
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>wheel foot:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>JOÃO MANIERI
+                        </h6>
+                        <p>
+                            Designed and built with all the love in the world by Pinch Moon.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Content
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Funções
+                                </a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Scripts</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Defines</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Helps</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">bootstrap</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Heroku</a>
+                        </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+
+
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://meusite.com">meusite.com.br</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script src="{% static 'js/controller.js' %}"></script>
+    <script>
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>
